@@ -11,7 +11,7 @@ const forecast = (latitude, longitude, place_name, callback) => {
         } else if (body.error) {
             callback('Invalid response from weather service, possibly due to invalid request parameters', undefined);
         } else {
-            callback(undefined, 'Forecast for ' + place_name + ' ' + body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + '% chance of rain')
+            callback(undefined, 'Forecast for ' + place_name + ' ' + body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + '% chance of rain. This daily high is ' + body.daily.data[0].temperatureHigh + " and the daily low is " +  body.daily.data[0].temperatureLow + ".")
         }
 
     });
